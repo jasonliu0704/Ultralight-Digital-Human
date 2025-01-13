@@ -225,7 +225,7 @@ def train(save_dir, dataset_dir, mode):
     model = SyncNet_color(mode).cuda()
     optimizer = optim.Adam([p for p in model.parameters() if p.requires_grad],
                            lr=0.001)
-    for epoch in range(40):
+    for epoch in range(1000):
         for batch in train_data_loader:
             imgT, audioT, y = batch
             imgT = imgT.cuda()
